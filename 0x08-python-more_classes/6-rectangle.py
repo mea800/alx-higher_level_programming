@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """Defines a Rectangle class"""
 
-
 class Rectangle:
     """
     Class that defines properties of a rectangle (from 5-rectangle.py).
@@ -11,7 +10,7 @@ class Rectangle:
         height (int): height of the rectangle.
     """
 
-    number_of_instances = 0  # tracks the number of instances of the Rec. class
+    number_of_instances = 0 # tracks the number of instances of the Rectangle class that have been created
 
     def __init__(self, width=0, height=0):
         """Initializes a new instance of the Rectangle class.
