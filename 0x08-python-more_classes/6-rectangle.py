@@ -11,9 +11,7 @@ class Rectangle:
         height (int): height of the rectangle.
     """
 
-    number_of_instances = 0
-    """ tracks the number of instances of the
-    Rectangle class that have been created """
+    number_of_instances = 0  # tracks the number of instances of the Rec. class
 
     def __init__(self, width=0, height=0):
         """Initializes a new instance of the Rectangle class.
