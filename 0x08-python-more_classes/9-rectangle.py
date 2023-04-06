@@ -4,14 +4,13 @@
 
 class Rectangle:
     """
-    Defines a rectangle with width, height and methods
-    for calculation and manipulation.
+    Defines a rectangle with width, height and methods.
 
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
     """
-    number_of_instances = 0  # Tracks number of instances of Rec. class
+    number_of_instances = 0  # Tracks number of instances
     print_symbol = "#"  # Character used to print the rectangle.
 
     def __init__(self, width=0, height=0):
@@ -99,8 +98,7 @@ class Rectangle:
             return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        """Returns a string representation of the rectangle
-        using '#' as the character.
+        """Returns a string representation of the rectangle.
 
         Returns:
             str: The rectangle represented by '#'.
