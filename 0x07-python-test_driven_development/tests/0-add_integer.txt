@@ -24,7 +24,7 @@ Because add_integer() doesn't take non-numbers it should throw an error
 if a non-number is passed as one of its arguments.
 
 Adding an integer and a float.
-	>>> add_integer(2, 3.0) #doctest: +REPORT_NDIFF
+	>>> add_integer(2, 3.0)  #doctest: +REPORT_NDIFF
 	5
 
 Adding a float and an integer.
@@ -84,15 +84,15 @@ Passing one bool argument.
     98
 
 Adding two float values.
-    >>> add_integer(3.0, 9.0) #doctest: +REPORT_NDIFF
+    >>> add_integer(3.0, 9.0)  #doctest: +REPORT_NDIFF
     12
 
 Adding two float values.
-    >>> add_integer(12.3, 9.0) #doctest: +REPORT_NDIFF
+    >>> add_integer(12.3, 9.0)  #doctest: +REPORT_NDIFF
     21
 
 Adding two float values.
-    >>> add_integer(12.3, 9.8) #doctest: +REPORT_NDIFF
+    >>> add_integer(12.3, 9.8)  #doctest: +REPORT_NDIFF
     21
 
 Passing None as the only argument.
@@ -198,7 +198,7 @@ Adding a negative undefined number and an integer.
     OverflowError: cannot convert float infinity to integer
 
 Passing more than 2 arguments to the function.
-	>>> add_integer(2, 3, 5, 6) #doctest: +ELLIPSIS
+	>>> add_integer(2, 3, 5, 6)  #doctest: +ELLIPSIS
 	Traceback (most recent call last):
 		...
 	TypeError: add_integer() takes from 1 to 2 positional arguments but ...
@@ -222,7 +222,7 @@ Passing only a symbol.
     SyntaxError: invalid syntax
 
 Passing an undefined variable.
-    >>> add_integer(b) #doctest: +ELLIPSIS
+    >>> add_integer(b)  #doctest: +ELLIPSIS
     Traceback (most recent call last):
         ...
     NameError: name ... is not defined
@@ -232,3 +232,4 @@ Passing 0 arguments.
     Traceback (most recent call last):
         ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
+    
