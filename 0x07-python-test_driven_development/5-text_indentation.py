@@ -1,26 +1,29 @@
 #!/usr/bin/python3
-"""Defines a function that prints a text with 2 new lines after each,
-of these characters: . ? and :
-Attributes:
-    text_indentation: function that prints a text with specific conditions
+"""This script defines a function to print
+a text with 2 new lines after each occurrence of ., ? and :
+
+The function is called text_indentation.
 """
 
 
 def text_indentation(text):
-    """Prints a text with 2 new lines after .?: characters.
+    """Prints a given text with 2 new lines after ., ? and : characters
 
     Args:
-        text (str): string to be examined.
+        text (str): The text to be examined
 
     Raises:
-        TypeError: If text is not of type str.
+        TypeError: If text is not a string
     """
-
+    # Check if the input is a string
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    for delim in ".:?":
-        text = (delim + "\n\n").join(
-            [line.strip(" ") for line in text.split(delim)])
+    # Split the text at each delimiter and join
+    # them back with the delimiter and 2 new lines
+    for delimiter in ".:?":
+        text = (delimiter + "\n\n").join(
+            [line.strip(" ") for line in text.split(delimiter)])
 
+    # Print the resulting text with no newline at the end
     print(text, end="")
