@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""Defines a function for dividing all elements of a matrix"""
+"""Defines a function for dividing all elements of a matrix
+"""
 
 
 def matrix_divided(matrix, div):
-    """
-    Divides all elements of a matrix.
+    """Divides all elements of a matrix.
 
     Args:
         matrix (list): A list of lists of integers or floats.
@@ -22,36 +22,32 @@ def matrix_divided(matrix, div):
         matrix: A result of the division.
     """
     row_size = None
-    error_msg = "Invalid input: matrix must be a \
-        list of lists containing integers/floats."
-
+    message = "matrix must be a matrix (list of lists) of integers/floats"
     # Check if the input matrix is valid
     if not matrix or not isinstance(matrix, list):
-        raise TypeError(error_msg)
+        raise TypeError(message)
 
     for i in matrix:
         # Check if each row of the matrix is a\
-        # list containing only integers or floats
+        # ssssslist containing only integers or floats
         if not i or not isinstance(i, list):
-            raise TypeError(error_msg)
+            raise TypeError(message)
 
         for j in i:
             if not isinstance(j, int) and not isinstance(j, float):
-                raise TypeError(error_msg)
-
-        # Check if each row of the matrix has the same size
+                raise TypeError(message)
+            # Check if each row of the matrix has the same size
         if row_size is None:
             row_size = len(i)
         elif row_size != len(i):
             raise TypeError("Each row of the matrix must have the same size")
-
     # Check if the divisor is a number and not equal to zero
     if not isinstance(div, int) and not isinstance(div, float):
-        raise TypeError("Invalid input: div must be a number")
+        raise TypeError("div must be a number")
 
     if div == 0:
-        raise ZeroDivisionError("Invalid input: division by zero")
-
+        raise ZeroDivisionError("division by zero")
     # Perform the division and return the result
     new_matrix = [[round(j / div, 2) for j in i] for i in matrix]
+
     return new_matrix
