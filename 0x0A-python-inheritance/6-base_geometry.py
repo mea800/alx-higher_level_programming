@@ -1,13 +1,14 @@
 #!/usr/bin/python3
-"""Defines the BaseGeometry class with an area method."""
+"""Defines a class BaseGeometry based on 5-base_geometry.py"""
 
 
 class BaseGeometry:
-    """BaseGeometry class serves as a base class for other geometry classes."""
+    """Class BaseGeometry.
+    """
     def area(self):
-        """Area method for calculating the area of a shape.
+        """Area function.
 
         Raises:
-            Exception: if area is not implemented in the subclass.
+            Exception: if area is not implemented.
         """
-        raise Exception("area() method is not implemented")
+        raise Exception("area() is not implemented")
