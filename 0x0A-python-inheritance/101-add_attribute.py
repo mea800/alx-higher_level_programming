@@ -1,20 +1,21 @@
 #!/usr/bin/python3
-"""add_attribute function to add a new attribute to an object if possible"""
+"""Funtion add_attribute"""
 
 
 def add_attribute(object, attr_name, value):
-    """Add a new attribute to an object if possible.
+    """Adds a new attribute to an object if it's possible.
 
     Args:
-        object (object): The object to which the attribute will be added.
-        attr_name (str): The name of the attribute.
-        value: The value of the attribute.
+        object (__main__.MyClass): name of the object.
+        attr_name ('str): name of the attribute.
+        value (str): value of the attribute.
 
     Raises:
-        TypeError: If the object does not support adding new attributes.
+        TypeError:  if the object can’t have new attribute.
     """
-    # Check if object has __dict__ attribute
+    # print("object type ---> {}".format(type(object)))
+    # print("attr_name type ---> {}".format(type(attr_name)))
+    # print("value type ---> {}".format(type(value)))
     if not hasattr(object, "__dict__"):
-        raise TypeError("Cannot add new attribute to object")
-    # Set the attribute with given name and value
+        raise TypeError("can't add new attribute")
     setattr(object, attr_name, value)
