@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Defines a class Rectangle that inherits from Base"""
+"""Rectangle module that defines a Rectangle
+class inheriting from Base class"""
 
 
 from models.base import Base
 
 
 class Rectangle(Base):
-    """Class that defines properties of Rectangle.
+    """Rectangle class that inherits from Base class.
 
      Attributes:
         width (int): width of rectangle.
@@ -16,14 +17,14 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Creates new instances of rectangle.
+        """Initializes a Rectangle instance.
 
         Args:
-            width (int): width of rectangle.
-            height (int): height of rectangle.
-            x (int, optional): x. Defaults to 0.
-            y (int, optional): y. Defaults to 0.
-            id (int, optional): Identity number of rectangle. Defaults to None.
+            width (int): The width of the rectangle.
+            height (int): The height of the rectangle.
+            x (int): The x-coordinate of the rectangle.
+            y (int): The y-coordinate of the rectangle.
+            id (int): The id of the rectangle.
         """
         self.width = width
         self.height = height
@@ -32,30 +33,30 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
-        """Prints rectangle"""
+        """Returns the string representation of the Rectangle instance"""
         return ("[Rectangle] ({}) {:d}/{:d} - {:d}/{:d}".
                 format(self.id, self.__x, self.__y, self.__width,
                        self.__height))
 
     @property
     def width(self):
-        """Width retriever.
+        """The width of the rectangle.
 
         Returns:
-            int: width of rectangle.
+            The width of the rectangle.
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Property setter for width of rectangle.
+        """The width setter of the rectangle.
 
         Args:
-            value (int): width of rectangle.
+            value (int): The value of the width.
 
         Raises:
-            TypeError: if width is not an integer.
-            ValueError: if width is less than or equal to zero.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to zero.
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -65,23 +66,23 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Height retriever.
+        """The height of the rectangle.
 
         Returns:
-            int: height of rectangle.
+            The height of the rectangle.
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Property setter for height of rectangle.
+        """The height setter of the rectangle.
 
         Args:
-            value (int): height of rectangle.
+            value (int): The value of the height.
 
         Raises:
-            TypeError: if height is not an integer.
-            ValueError: if height is less than or equal to zero.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than or equal to zero.
         """
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
@@ -91,23 +92,23 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """x retriever.
+        """The x-coordinate of the rectangle.
 
         Returns:
-            int: x.
+            The x-coordinate of the rectangle.
         """
         return self.__x
 
     @x.setter
     def x(self, value):
-        """Property setter for x.
+        """The x-coordinate setter of the rectangle.
 
         Args:
-            value (int): x.
+            value (int): The value of the x-coordinate.
 
         Raises:
-            TypeError: if x is not an integer.
-            ValueError: if x is less than or equal to zero.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than zero.
         """
         if type(value) is not int:
             raise TypeError("x must be an integer")
@@ -117,23 +118,23 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """y retriever.
+        """The y-coordinate of the rectangle.
 
         Returns:
-            int: y.
+            The y-coordinate of the rectangle.
         """
         return self.__y
 
     @y.setter
     def y(self, value):
-        """Property setter for y.
+        """The y-coordinate setter of the rectangle.
 
         Args:
-            value (int): y.
+            value (int): The value of the y-coordinate.
 
         Raises:
-            TypeError: if y is not an integer.
-            ValueError: if y is less than or equal to zero.
+            TypeError: If value is not an integer.
+            ValueError: If value is less than zero.
         """
         if type(value) is not int:
             raise TypeError("y must be an integer")
@@ -170,8 +171,6 @@ class Rectangle(Base):
             **kwargs (dict): double pointer to a dictionary.
         """
 
-        # print("args {}".format(type(args)))
-        # print("kwargs {}".format(type(kwargs)))
         if args is not None and len(args) is not 0:
             list_atrr = ['id', 'width', 'height', 'x', 'y']
             for i in range(len(args)):
