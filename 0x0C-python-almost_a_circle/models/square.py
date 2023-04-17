@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a class Square"""
+"""Module that defines the Square class"""
 
 
 from inspect import classify_class_attrs
@@ -7,7 +7,7 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Class that defines properties of Square.
+    """Class that represents a square.
 
      Attributes:
         width (int): width of rectangle.
@@ -17,24 +17,24 @@ class Square(Rectangle):
         id (int): identity of square.
     """
     def __init__(self, size, x=0, y=0, id=None):
-        """Creates new instances of Square
+        """Initializes a new Square instance
 
         Args:
-            size (int): width and height of square.
-            x (int, optional): x. Defaults to 0.
-            y (int, optional): y. Defaults to 0.
-            id (int, optional): Identity number of square. Defaults to None.
+            size (int): the size of the square
+            x (int): the x-coordinate of the square's position
+            y (int): the y-coordinate of the square's position
+            id (int): the unique ID of the square.
         """
         super().__init__(size, size, x, y, id)
 
     def __str__(self):
-        """Prints square"""
+        """Returns a string representation of the square"""
         return ("[Square] ({}) {:d}/{:d} - {:d}".
                 format(self.id, self.x, self.y, self.size))
 
     @property
     def size(self):
-        """Property retriever for size.
+        """Gets the size of the square.
 
         Returns:
             int: size of one side of square.
@@ -43,12 +43,12 @@ class Square(Rectangle):
 
     @size.setter
     def size(self, value):
-        """Property setter for width of square.
+        """Sets the size of the square.
         Args:
-            value (int): width of square.
+              value (int): the new size of the square
         Raises:
-            TypeError: if width is not an integer.
-          ValueError: if width is less than or equal to zero.
+            TypeError: if value is not an integer
+            ValueError: if value is less than or equal to 0
         """
         if not isinstance(value, int):
             raise TypeError("width must be an integer")
@@ -59,11 +59,11 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
-        """Assigns an argument to each attribute
+        """Updates the attributes of the square
 
         Args:
-            *args (tuple): arguments.
-            **kwargs (dict): double pointer to a dictionary.
+            *args (tuple): tuple containing the new attribute values
+            **kwargs (dict): dictionary containing the new attribute values.
         """
         if args is not None and len(args) is not 0:
             list_atr = ['id', 'size', 'x', 'y']
@@ -82,7 +82,7 @@ class Square(Rectangle):
                     setattr(self, key, value)
 
     def to_dictionary(self):
-        """Returns the dictionary representation of a Square.
+        """RReturns a dictionary representation of the squaree.
 
         Returns:
             dict: square.
