@@ -7,15 +7,15 @@ import turtle
 
 
 class Base:
-    """Class that defines properties of Base.
+    """Base class for other classes.
 
-     Attributes:
+    Attributes:
         id (int): Identity of each instance.
     """
     __nb_objects = 0
 
     def __init__(self, id=None):
-        """Creates new instances of Base.
+        """Initialize instance with id.
 
         Args:
             id (int, optional): Identity of each instance. Defaults to None.
@@ -28,13 +28,13 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-        """Returns the JSON string representation of list_dictionaries.
+        """Convert list of dictionaries to JSON string.
 
         Args:
-            list_dictionaries (list): list of dictionaries.
+            list_dictionaries (list): List of dictionaries.
 
         Returns:
-            str: jason string representation.
+            str: JSON string representation.
         """
         if list_dictionaries is None or list_dictionaries == "[]":
             return "[]"
@@ -42,11 +42,11 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON string representation of list_objs to a file.
+        """Write list of objects to a JSON file.
 
         Args:
-            list_objs (list): instances who inherits of Base - example:
-            list of Rectangle or list of Square instances.
+            list_objs (list): List of instances of
+            a class that inherits from Base.
         """
         filename = "{}.json".format(cls.__name__)
         list_dic = []
@@ -64,38 +64,27 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Returns the list of the JSON string representation json_string.
+        """ Convert JSON string to list of dictionaries.
 
         Args:
-            json_string (str): _description_
+            json_string (str): JSON string.
 
         Returns:
-            list: JSON string representation json_string
+            list: List of dictionaries
         """
         if json_string is None or len(json_string) == 0:
             return []
-        return(json.loads(json_string))
+        return (json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
-        """Returns an instance with all attributes already set.
+        """Create instance with attributes from a dictionary.
 
         Args:
-            dictionary (dict): double pointer to a dictionary.
-            cls (any): class.
-
-        To use the update method to assign all attributes, you must,
-        create a “dummy” instance before:
-        Create a Rectangle or Square instance with “dummy” mandatory,
-        attributes (width, height, size, etc.),
-        Call update instance method to this “dummy” instance to apply your,
-        real values.
-        You must use the method def update(self, *args, **kwargs).
-        **dictionary must be used as **kwargs of the method update.
-        You are not allowed to use eval.
+            dictionary (dict): Dictionary of attributes.
 
         Returns:
-            list: an instance with all attributes already set.
+            list: Instance with attributes already set.
         """
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
@@ -104,7 +93,7 @@ class Base:
         dummy.update(**dictionary)
 
         # print("cls type --> {}".format(type(cls)))
-        return(dummy)
+        return (dummy)
 
     @classmethod
     def load_from_file(cls):
@@ -113,8 +102,8 @@ class Base:
         If the file doesn’t exist, return an empty list.
         Otherwise, return a list of instances - the type of these instances,
         depends on cls (current class using this method).
-        You must use the from_json_string and create methods (implemented,
-        previously).
+        Uses the from_json_string and create methods.
+
         Args:
             cls (any): class.
 
@@ -139,11 +128,11 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Serializes a list of rectangles or squares in csv.
+        """Serializes a list of rectangles or squares in CSV format.
 
         Args:
             cls (any): class.
-            list_objs (list): objects.
+            list_objs (list): list of objects.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, 'w', newline="") as f:
@@ -157,10 +146,13 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """deserializes a list of rectangles or squares in csv.
+        """Deserializes a list of rectangles or squares in CSV format.
 
         Args:
             cls (any): class.
+
+        Returns:
+            list: list of objects.
         """
         filename = cls.__name__ + ".csv"
         my_obj = []
@@ -177,13 +169,13 @@ class Base:
                                       "x": int(elm[2]), "y": int(elm[3])}
                     obj = cls.create(**dictionary)
                     my_obj.append(obj)
-        except(Exception):
+        except (Exception):
             pass
-        return(my_obj)
+        return (my_obj)
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """ Opens a window and draws all the Rectangles and Squares
+        """ Draws Rectangles and Squares in a turtle graphics window
 
         NOT COMPLETE!!!!!!
 
