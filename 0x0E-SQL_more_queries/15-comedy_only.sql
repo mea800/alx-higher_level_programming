@@ -1,4 +1,4 @@
--- script that lists all Comedy shows in the database hbtn_0d_tvshows.
+-- script that list all Comedy show in the databases hbtn_0d_tvshows.
 SELECT
     tv_shows.title AS title
     FROM tv_show_genres

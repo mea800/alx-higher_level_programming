@@ -1,4 +1,4 @@
--- script that lists all shows from hbtn_0d_tvshows_rate by their rating.
+-- script that list all shows from hbtn_0d_tvshows_rate by their rating.
 SELECT tv_genres.name, SUM(tv_show_ratings.rate) AS rating -- Query to join tables
 FROM tv_genres
 JOIN tv_show_genres
