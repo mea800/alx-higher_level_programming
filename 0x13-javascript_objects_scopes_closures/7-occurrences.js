@@ -14,7 +14,7 @@ exports.nbOccurences = function (list, searchElement) {
   });
   return count;
 };
-// alternative to arrow function
+// alternative to the arrow function
 // list.forEach(function (item) {
 //   if (item === searchElement) {
 //     i++;
