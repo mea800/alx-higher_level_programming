@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Script that takes in the name of a state as an argument and lists
-all cities of that state, using the database hbtn_0e_4_usa"""
+all cities of that state, using database hbtn_0e_4_usa"""
 import MySQLdb
 from sys import argv
 
